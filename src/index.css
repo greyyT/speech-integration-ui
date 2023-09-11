@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('./assets/fonts/SFUFuturaHeavy.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Georgia';
+  src: url('./assets/fonts/SVN-Georgia-Regular.otf') format('opentype');
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: 5px;
+    scrollbar-color: #cacaca;
+  }
+  h1 {
+    @apply font-georgia text-h1;
+  }
+  h2 {
+    @apply font-lato font-bold;
+  }
+  h3 {
+    @apply font-lato font-bold text-h3;
+  }
+  p {
+    @apply font-lato;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #dadada;
+    border-radius: 10px;
+  }
+}
+
+@layer components {
+  .shadow-nav {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  .w-window {
+    width: var(--window-width);
+  }
+  .shadow-box {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  .shadow-course {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  }
+  .shadow-pay {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .shadow-blog {
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .line {
+    border: 1px solid #dadada;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .position-unset {
+    position: unset;
+  }
+  .modal {
+    @apply fixed inset-0 bg-black bg-opacity-70 z-30 flex items-end lg:items-center justify-center transition-all duration-200;
+  }
+  .modal--remove {
+    @apply bg-transparent bg-opacity-100 block transition-none opacity-100;
+    position: unset;
+  }
+  .modal--body {
+    @apply h-[85vh] mx-4 w-200 bg-white relative mb-6;
+  }
+}
